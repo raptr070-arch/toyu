@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Doston & Hilola — To'y Taklifnomasi</title>
+<meta name="description" content="Doston va Hilolaning to'y taklifnomasi — 03-oktabr 2026">
+<meta name="theme-color" content="#2d3e2f">
+
+<meta property="og:title" content="Doston & Hilola — Taklifnoma">
+<meta property="og:description" content="Sizni to'yimizga taklif qilamiz!">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --bej: #f5efe6;
+  --bej-dark: #e8dfd0;
+  --gold: #c9a961;
+  --gold-light: #e0c88a;
+  --gold-dark: #a8894a;
+  --green: #2d3e2f;
+  --green-light: #4a5d4c;
+  --text: #3a3028;
+  --text-light: #6a5a4a;
+  --white: #ffffff;
+  --font-script: 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-serif);
+  background: var(--bej);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* PRELOADER */
+.preloader {
+  position: fixed; inset: 0; z-index: 99999;
+  background: #1a1410;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.8s, visibility 0.8s;
+}
+.preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.preloader-inner { position: relative; width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; }
+.preloader-ring {
+  position: absolute; inset: 0;
+  border: 2px solid rgba(201, 169, 97, 0.2);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.preloader-text {
+  font-family: var(--font-script);
+  font-size: 32px; color: var(--gold);
+}
+
+/* MUSIQA */
+.music-control {
+  position: fixed; top: 20px; left: 20px; z-index: 1000;
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  padding: 8px 14px; border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  opacity: 0; transform: translateY(-20px);
+  transition: all 0.6s;
+}
+.music-control.visible { opacity: 1; transform: translateY(0); }
+.music-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--gold); color: white;
+  display: flex; align-items: center; justify-content: center;
+  transition: 0.3s; font-size: 16px;
+}
+.music-btn:hover { transform: scale(1.1); }
+.music-btn.playing { animation: musicPulse 1.5s infinite; }
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 169, 97, 0.7); }
+  50% { box-shadow: 0 0 0 12px rgba(201, 169, 97, 0); }
+}
+.volume-slider {
+  width: 70px; height: 3px; -webkit-appearance: none;
+  background: var(--bej-dark); border-radius: 2px; outline: none;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 14px; height: 14px;
+  background: var(--gold); border-radius: 50%; cursor: pointer;
+  box-shadow: 0 2px 8px rgba(201, 169, 97, 0.5);
+}
+
+/* TIL */
+.lang-switcher {
+  position: fixed; top: 20px; right: 20px; z-index: 1000;
+  display: flex; gap: 4px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  padding: 4px; border-radius: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  opacity: 0; transform: translateY(-20px);
+  transition: all 0.6s 0.2s;
+}
+.lang-switcher.visible { opacity: 1; transform: translateY(0); }
+.lang-btn {
+  padding: 7px 13px; border-radius: 20px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1px;
+  color: var(--text-light); transition: 0.3s;
+  font-family: var(--font-sans);
+}
+.lang-btn.active { background: var(--gold); color: white; }
+
+/* ============================================
+   🚪 INTRO — ESHIK OCHILISH EFFEKTI
+   ============================================ */
+.intro {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  background: #0f0a08;
+  transition: opacity 1.2s 1.5s, visibility 1.2s 1.5s;
+  overflow: hidden;
+  perspective: 2000px;
+}
+.intro.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+/* Eshik orqasidagi yorug'lik + fon rasmi */
+.intro-light {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 50%, rgba(201, 169, 97, 0.5), transparent 70%),
+    linear-gradient(rgba(26, 20, 16, 0.5), rgba(26, 20, 16, 0.7)),
+    url('assets/images/hero-bg.jpg') center/cover no-repeat;
+  opacity: 0;
+  transition: opacity 1s 0.8s;
+  z-index: 1;
+}
+.intro.opening .intro-light { opacity: 1; }
+
+/* Eshiklar */
+.intro-door {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 5;
+  transition: transform 2.2s cubic-bezier(0.7, 0, 0.3, 1);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.intro-door-left {
+  left: 0;
+  transform-origin: left center;
+  background: linear-gradient(90deg,
+    #1a1410 0%, #2d2418 15%, #3a2f1f 30%,
+    #2d2418 50%, #3a2f1f 70%, #2d2418 85%, #1a1410 100%);
+  border-right: 2px solid var(--gold-dark);
+  box-shadow: inset -20px 0 60px rgba(0,0,0,0.7);
+}
+
+.intro-door-right {
+  right: 0;
+  transform-origin: right center;
+  background: linear-gradient(90deg,
+    #1a1410 0%, #2d2418 15%, #3a2f1f 30%,
+    #2d2418 50%, #3a2f1f 70%, #2d2418 85%, #1a1410 100%);
+  border-left: 2px solid var(--gold-dark);
+  box-shadow: inset 20px 0 60px rgba(0,0,0,0.7);
+}
+
+/* Yog'och naqshi */
+.intro-door::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg,
+      transparent 0px, transparent 40px,
+      rgba(0,0,0,0.3) 40px, rgba(0,0,0,0.3) 42px),
+    repeating-linear-gradient(0deg,
+      transparent 0px, transparent 80px,
+      rgba(0,0,0,0.2) 80px, rgba(0,0,0,0.2) 82px);
+  opacity: 0.6;
+}
+
+.door-panel {
+  position: absolute;
+  top: 8%; bottom: 8%; left: 8%; right: 8%;
+  border: 2px solid rgba(201, 169, 97, 0.4);
+  border-radius: 4px;
+  background: linear-gradient(135deg,
+    rgba(201, 169, 97, 0.05), rgba(0,0,0,0.15));
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,0.5),
+    inset 0 0 4px rgba(201, 169, 97, 0.3);
+}
+
+.door-panel-inner {
+  position: absolute; inset: 15px;
+  border: 1px solid rgba(201, 169, 97, 0.25);
+  border-radius: 3px;
+}
+
+.door-ornament {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  color: var(--gold);
+  font-size: 28px;
+  text-shadow: 0 0 15px rgba(201, 169, 97, 0.6);
+}
+.door-ornament.top { top: 20px; }
+.door-ornament.middle {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 42px;
+  animation: ornamentPulse 3s ease-in-out infinite;
+}
+.door-ornament.bottom { bottom: 20px; }
+
+@keyframes ornamentPulse {
+  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.door-handle {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #e0c88a, #a8894a 60%, #6a5528);
+  box-shadow:
+    0 0 25px rgba(201, 169, 97, 0.8),
+    inset 0 -3px 8px rgba(0,0,0,0.4),
+    inset 0 3px 8px rgba(255,255,255,0.4);
+  z-index: 10;
+}
+.door-handle::before {
+  content: '';
+  position: absolute; inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 97, 0.4), transparent 70%);
+  animation: handleGlow 2s ease-in-out infinite alternate;
+}
+@keyframes handleGlow {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+.intro-door-left .door-handle { right: 15px; }
+.intro-door-right .door-handle { left: 15px; }
+
+/* Eshik ochilishi */
+.intro.opening .intro-door-left { transform: rotateY(-115deg); }
+.intro.opening .intro-door-right { transform: rotateY(115deg); }
+
+/* Konvert eshik ochilgach ko'rinadi */
+.intro .envelope-container {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 1s 1.2s, transform 1s 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 3;
+  pointer-events: none;
+}
+.intro.opening .envelope-container {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Eshik bosish yozuvi */
+.door-hint {
+  position: absolute;
+  bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  animation: blink 2s infinite;
+  transition: opacity 0.5s;
+  text-align: center;
+}
+.intro.opening .door-hint { opacity: 0; }
+.door-hint::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 12px auto 0;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ENVELOPE */
+.envelope-container {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 40px;
+  perspective: 1500px;
+}
+
+.envelope {
+  position: relative; width: 360px; height: 240px;
+  cursor: pointer; transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.envelope:hover { transform: translateY(-8px); }
+
+.envelope-body {
+  position: absolute; inset: 0;
+  background: linear-gradient(145deg, #faf4e8, #ede0c8);
+  border-radius: 10px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+.envelope-lace {
+  position: absolute; top: 0; left: 0; right: 0; height: 90px;
+  background:
+    radial-gradient(circle at 12px 0, transparent 14px, #faf4e8 15px) 0 0/24px 24px repeat-x,
+    radial-gradient(circle at 12px 0, transparent 14px, #faf4e8 15px) 12px 12px/24px 24px repeat-x;
+  opacity: 0.95;
+}
+.envelope-pattern {
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(201, 169, 97, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(201, 169, 97, 0.18) 0%, transparent 50%);
+}
+.envelope-corner {
+  position: absolute; width: 30px; height: 30px;
+  border-color: var(--gold); opacity: 0.4;
+}
+.envelope-corner.tl { top: 10px; left: 10px; border-top: 1px solid; border-left: 1px solid; }
+.envelope-corner.tr { top: 10px; right: 10px; border-top: 1px solid; border-right: 1px solid; }
+.envelope-corner.bl { bottom: 10px; left: 10px; border-bottom: 1px solid; border-left: 1px solid; }
+.envelope-corner.br { bottom: 10px; right: 10px; border-bottom: 1px solid; border-right: 1px solid; }
+
+.envelope-flap {
+  position: absolute; top: 0; left: 0; right: 0; height: 140px;
+  background: linear-gradient(180deg, #f5ead4, #e8d9be);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  z-index: 3; backface-visibility: hidden;
+}
+.flap-inner {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 100%, rgba(201, 169, 97, 0.15), transparent 60%);
+}
+.envelope.opening .envelope-flap { transform: rotateX(180deg); }
+
+.envelope-card {
+  position: absolute; left: 20px; right: 20px; top: 35px; bottom: 35px;
+  background:
+    linear-gradient(145deg, #fdfaf3, #f5efe0),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c9a961' fill-opacity='0.1'%3E%3Cpath d='M30 5 L33 25 L53 30 L33 35 L30 55 L27 35 L7 30 L27 25 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover, 60px 60px;
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2;
+  transition: transform 1.3s 0.3s cubic-bezier(0.7, 0, 0.3, 1);
+  border: 1px solid rgba(201, 169, 97, 0.35);
+}
+.envelope.opening .envelope-card { transform: translateY(-220px); }
+
+.card-content { text-align: center; padding: 25px 20px; }
+.card-ornament { color: var(--gold); font-size: 16px; letter-spacing: 6px; }
+.card-ornament.top { margin-bottom: 12px; }
+.card-ornament.bottom { margin-top: 12px; }
+.card-subtitle {
+  font-family: var(--font-sans); font-size: 9px;
+  letter-spacing: 4px; color: var(--text-light);
+  margin-bottom: 15px;
+}
+.card-names {
+  font-family: var(--font-script);
+  font-size: 34px; color: var(--green);
+  margin-bottom: 12px; font-weight: 400;
+}
+.card-names span { color: var(--gold); font-size: 0.7em; }
+.card-line {
+  width: 60px; height: 1px;
+  background: var(--gold); margin: 0 auto 12px;
+}
+.card-date {
+  font-family: var(--font-sans); font-size: 11px;
+  letter-spacing: 4px; color: var(--text-light);
+}
+
+.envelope-seal {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -35%);
+  width: 90px; height: 90px; z-index: 5;
+  transition: transform 0.9s, opacity 0.9s;
+}
+.seal-outer {
+  width: 100%; height: 100%; border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(201, 169, 97, 0.3), transparent 70%);
+  display: flex; align-items: center; justify-content: center;
+}
+.seal-inner {
+  width: 80%; height: 80%; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #8a9a7b, #4a5d4c 70%);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.5),
+    inset 0 -5px 12px rgba(0,0,0,0.35),
+    inset 0 5px 12px rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.seal-inner::before {
+  content: ''; position: absolute; inset: 8px;
+  border-radius: 50%; border: 1px dashed rgba(255,255,255,0.35);
+}
+.seal-letter {
+  font-family: var(--font-serif);
+  font-size: 22px; font-weight: 600;
+  color: #e8ede3; letter-spacing: 1px;
+}
+.seal-amp { color: var(--gold-light); font-size: 0.8em; }
+.envelope.opening .envelope-seal {
+  transform: translate(-50%, 120px) scale(0.2) rotate(180deg);
+  opacity: 0;
+}
+
+.open-hint {
+  position: relative;
+  font-family: var(--font-sans); font-size: 12px;
+  letter-spacing: 5px; color: rgba(255,255,255,0.75);
+  text-transform: uppercase; animation: blink 2s infinite;
+  transition: opacity 0.5s;
+}
+.hint-pulse {
+  position: absolute; inset: -20px -30px;
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  border-radius: 40px;
+  animation: hintPulse 2s infinite;
+}
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+/* SITE */
+.site { opacity: 0; transition: opacity 1.2s 0.6s; }
+.site.visible { opacity: 1; }
+
+/* HERO */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; text-align: center; color: white;
+  background:
+    linear-gradient(135deg, rgba(45, 62, 47, 0.75), rgba(26, 20, 16, 0.85)),
+    url('assets/images/hero-bg.jpg') center/cover no-repeat fixed,
+    linear-gradient(135deg, #2d3e2f, #1a1410);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(45, 62, 47, 0.45), rgba(45, 62, 47, 0.75));
+  z-index: 2;
+}
+.hero-vignette {
+  position: absolute; inset: 0; z-index: 2;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.6));
+}
+.hero-flower {
+  position: absolute; z-index: 3;
+  font-size: 60px; color: var(--gold);
+  opacity: 0.3; animation: floatFlower 6s ease-in-out infinite;
+}
+.hero-flower-tl { top: 10%; left: 8%; }
+.hero-flower-tr { top: 15%; right: 10%; animation-delay: 2s; }
+@keyframes floatFlower {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+}
+
+.hero-content {
+  position: relative; z-index: 4;
+  padding: 40px 25px; max-width: 800px;
+}
+.hero-subtitle {
+  font-family: var(--font-sans); font-size: 12px;
+  letter-spacing: 8px; margin-bottom: 30px; opacity: 0.9;
+}
+.hero-names {
+  font-family: var(--font-script);
+  font-size: clamp(64px, 14vw, 140px);
+  line-height: 1; font-weight: 400;
+  text-shadow: 0 8px 50px rgba(0,0,0,0.5);
+  letter-spacing: 3px;
+}
+.name-line {
+  display: inline-block; opacity: 0;
+  transform: translateY(50px) rotateX(90deg);
+  filter: blur(10px);
+  animation: letterReveal 1.6s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+#nameLine1 { animation-delay: 0.5s; }
+#nameLine2 { animation-delay: 1.3s; }
+@keyframes letterReveal {
+  0% { opacity: 0; transform: translateY(50px) rotateX(90deg); filter: blur(10px); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); filter: blur(0); }
+}
+.hero-amp {
+  display: block; font-size: 0.55em; color: var(--gold);
+  margin: 5px 0; opacity: 0;
+  animation: letterReveal 1.4s 0.9s forwards;
+}
+.hero-divider {
+  display: flex; align-items: center; justify-content: center;
+  gap: 18px; margin: 35px 0 25px;
+}
+.divider-line {
+  width: 80px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.divider-line.left { background: linear-gradient(90deg, transparent, var(--gold)); }
+.divider-line.right { background: linear-gradient(90deg, var(--gold), transparent); }
+.divider-icon { color: var(--gold); font-size: 22px; }
+.hero-date {
+  font-family: var(--font-sans); font-size: 15px;
+  letter-spacing: 7px; opacity: 0.95; margin-bottom: 8px;
+}
+.hero-location {
+  font-family: var(--font-sans); font-size: 11px;
+  letter-spacing: 5px; opacity: 0.7;
+}
+.scroll-hint {
+  position: absolute; bottom: 35px; left: 50%;
+  transform: translateX(-50%); z-index: 4;
+  font-family: var(--font-sans); font-size: 10px;
+  letter-spacing: 4px; opacity: 0.8; text-align: center;
+}
+.scroll-arrow {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px; margin-top: 12px;
+}
+.scroll-arrow span {
+  display: block; width: 8px; height: 8px;
+  border-right: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  transform: rotate(45deg);
+  animation: scrollAnim 2s infinite;
+}
+.scroll-arrow span:nth-child(2) { animation-delay: 0.2s; }
+.scroll-arrow span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes scrollAnim {
+  0% { opacity: 0; transform: rotate(45deg) translate(-5px, -5px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
+}
+
+/* SECTION */
+.section {
+  padding: 100px 25px; position: relative; text-align: center;
+  overflow: hidden;
+}
+.section-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 2; }
+.section-decor {
+  position: absolute; font-size: 120px;
+  color: var(--gold); opacity: 0.06;
+  font-family: var(--font-script);
+  z-index: 1;
+}
+.decor-left { top: 50px; left: 20px; transform: rotate(-20deg); }
+.decor-right { bottom: 50px; right: 20px; transform: rotate(20deg); }
+
+.section-title {
+  font-family: var(--font-script);
+  font-size: clamp(48px, 10vw, 96px);
+  color: var(--green); font-weight: 400;
+  margin-bottom: 35px; line-height: 1.05;
+  text-shadow: 0 2px 30px rgba(201, 169, 97, 0.15);
+  letter-spacing: 2px;
+}
+.section-text {
+  font-size: 21px; line-height: 2;
+  color: var(--text-light); max-width: 640px;
+  margin: 0 auto; font-weight: 300;
+  letter-spacing: 0.3px;
+}
+.ornament-top, .ornament-bottom {
+  color: var(--gold); font-size: 18px;
+  letter-spacing: 10px; margin: 25px 0;
+}
+
+.invitation-section {
+  background: var(--bej);
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(201, 169, 97, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 75%, rgba(201, 169, 97, 0.06) 0%, transparent 25%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a961' fill-opacity='0.05'%3E%3Cpath d='M30 0l3 12 12-3-9 9 9 9-12-3-3 12-3-12-12 3 9-9-9-9 12 3z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, auto, 60px 60px;
+}
+
+/* BIRD SECTION */
+.bird-section {
+  background: linear-gradient(180deg, var(--bej) 0%, var(--bej-dark) 50%, var(--bej) 100%);
+  padding: 120px 25px 140px;
+  position: relative;
+  overflow: hidden;
+}
+.bird-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(45, 62, 47, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+.bird-subtitle {
+  font-family: var(--font-sans);
+  font-size: 12px; letter-spacing: 6px;
+  color: var(--text-light);
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+.bird-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 200px;
+}
+.bird-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+  transform-origin: center;
+}
+.bird-item.revealed {
+  opacity: 0;
+  transform: scale(0.3) rotate(180deg);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.bird-reveal-card {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 35px 45px;
+  min-width: 240px;
+  min-height: 200px;
+  background: radial-gradient(circle at 35% 30%, #fdfaf3, #f0e6d2 60%, #e0d0b0);
+  border: 3px solid var(--gold);
+  border-radius: 50%;
+  box-shadow:
+    0 25px 60px rgba(201, 169, 97, 0.5),
+    inset 0 -6px 15px rgba(201, 169, 97, 0.25),
+    inset 0 6px 15px rgba(255, 255, 255, 0.9);
+  animation: cardPop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+.bird-reveal-card::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 1px dashed rgba(201, 169, 97, 0.5);
+  pointer-events: none;
+}
+.bird-reveal-card.show { display: flex; }
+@keyframes cardPop {
+  0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+  60% { transform: scale(1.1) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.bird-reveal-label {
+  font-family: var(--font-sans);
+  font-size: 10px; letter-spacing: 4px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative; z-index: 2;
+}
+.bird-reveal-value {
+  font-family: var(--font-script);
+  font-size: clamp(36px, 7vw, 52px);
+  color: var(--green);
+  line-height: 1;
+  text-shadow: 0 4px 25px rgba(201, 169, 97, 0.3);
+  position: relative; z-index: 2;
+}
+.bird-reveal-sub {
+  font-family: var(--font-sans);
+  font-size: 11px; letter-spacing: 3px;
+  color: var(--gold-dark);
+  font-weight: 500;
+  position: relative; z-index: 2;
+}
+
+.bird-reset {
+  display: none;
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 11px; letter-spacing: 3px;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.bird-reset.show { display: inline-block; }
+.bird-reset:hover {
+  background: var(--gold);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(201, 169, 97, 0.4);
+}
+
+.bird-circle {
+  position: relative;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fdfaf3, #f0e6d2 60%, #e0d0b0);
+  border: 3px solid var(--gold);
+  box-shadow:
+    0 15px 40px rgba(201, 169, 97, 0.35),
+    inset 0 -6px 15px rgba(201, 169, 97, 0.2),
+    inset 0 6px 15px rgba(255, 255, 255, 0.8);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+  overflow: hidden;
+}
+.bird-circle::before {
+  content: '';
+  position: absolute; inset: 8px;
+  border-radius: 50%;
+  border: 1px dashed rgba(201, 169, 97, 0.4);
+  transition: all 0.5s;
+}
+.bird-circle::after {
+  content: '';
+  position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.6) 50%, transparent 60%);
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  transition: transform 0.8s;
+}
+.bird-item:hover .bird-circle::after {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+.bird-item:hover .bird-circle {
+  transform: translateY(-10px) scale(1.08);
+  box-shadow:
+    0 25px 55px rgba(201, 169, 97, 0.55),
+    inset 0 -6px 15px rgba(201, 169, 97, 0.25),
+    inset 0 6px 15px rgba(255, 255, 255, 0.9);
+  border-color: var(--gold-dark);
+}
+
+.bird-icon {
+  font-size: 52px; line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  transition: transform 0.5s;
+  position: relative; z-index: 2;
+}
+.bird-item:hover .bird-icon {
+  transform: scale(1.15) rotate(-8deg);
+}
+
+.bird-label {
+  font-family: var(--font-sans);
+  font-size: 11px; letter-spacing: 3px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.feather {
+  position: fixed;
+  font-size: 24px; color: var(--gold);
+  opacity: 0; pointer-events: none;
+  z-index: 10000;
+}
+.feather.fly { animation: featherFly 1.5s ease-out forwards; }
+@keyframes featherFly {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translate(var(--fx), var(--fy)) rotate(360deg) scale(0.3); }
+}
+
+/* COUNTDOWN */
+.countdown-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(201, 169, 97, 0.15), transparent 60%),
+    linear-gradient(180deg, var(--bej) 0%, var(--bej-dark) 100%);
+  position: relative;
+}
+.particles-canvas {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 1;
+}
+.countdown-grid {
+  display: flex; justify-content: center; align-items: center;
+  gap: 14px; flex-wrap: wrap; margin-top: 30px;
+  position: relative; z-index: 2;
+}
+.countdown-item {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  border-radius: 16px; padding: 25px 18px;
+  min-width: 95px;
+  box-shadow: 0 15px 40px rgba(60, 40, 20, 0.1);
+  transition: transform 0.3s;
+}
+.countdown-item:hover { transform: translateY(-5px); }
+.countdown-num {
+  font-family: var(--font-serif);
+  font-size: 48px; font-weight: 600;
+  color: var(--green); line-height: 1;
+}
+.countdown-num.tick { animation: tickAnim 0.5s; }
+@keyframes tickAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); color: var(--gold); }
+  100% { transform: scale(1); }
+}
+.countdown-label {
+  font-family: var(--font-sans); font-size: 10px;
+  letter-spacing: 2px; color: var(--text-light); margin-top: 10px;
+}
+.countdown-sep {
+  font-size: 32px; color: var(--gold); opacity: 0.5;
+}
+
+/* VENUE */
+.venue-section {
+  background: var(--bej);
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(201, 169, 97, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 75%, rgba(201, 169, 97, 0.06) 0%, transparent 25%);
+}
+.venue-card {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(250, 245, 235, 0.96)),
+    url('assets/images/venue.jpg') center/cover;
+  min-height: 420px;
+  border-radius: 24px;
+  padding: 55px 35px;
+  box-shadow: 0 25px 70px rgba(60, 40, 20, 0.15);
+  border: 1px solid rgba(201, 169, 97, 0.25);
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.venue-card::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(201, 169, 97, 0.4);
+  border-radius: 18px;
+  pointer-events: none;
+  z-index: 1;
+}
+.venue-ornament {
+  position: absolute; top: 20px; left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold); font-size: 20px;
+  z-index: 2;
+  background: white; padding: 0 15px;
+}
+.venue-icon {
+  font-size: 64px;
+  margin-bottom: 18px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 4px 12px rgba(201, 169, 97, 0.4));
+  position: relative; z-index: 2;
+}
+.venue-name {
+  font-family: var(--font-serif); font-size: 38px;
+  letter-spacing: 6px; color: var(--green);
+  font-weight: 500; margin-bottom: 12px;
+  position: relative; z-index: 2;
+}
+.venue-addr {
+  font-size: 16px; color: var(--text-light); margin-bottom: 25px;
+  position: relative; z-index: 2;
+}
+.venue-time-wrap {
+  display: inline-block; margin-bottom: 30px;
+  padding: 15px 35px;
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.15), rgba(201, 169, 97, 0.25));
+  border-radius: 14px;
+  position: relative; z-index: 2;
+}
+.venue-time-label {
+  display: block; font-family: var(--font-sans);
+  font-size: 10px; letter-spacing: 3px;
+  color: var(--text-light); margin-bottom: 6px;
+}
+.venue-time {
+  font-family: var(--font-serif); font-size: 32px;
+  letter-spacing: 5px; color: var(--gold-dark);
+  font-weight: 500;
+}
+.venue-map-btns {
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap;
+  position: relative; z-index: 2;
+}
+.map-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 25px;
+  border: 1.5px solid var(--gold); background: rgba(255,255,255,0.9);
+  border-radius: 30px; font-family: var(--font-sans);
+  font-size: 12px; letter-spacing: 1.5px;
+  color: var(--gold-dark); text-decoration: none;
+  transition: 0.3s; text-transform: uppercase;
+  font-weight: 500;
+}
+.map-btn:hover {
+  background: var(--gold); color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(201, 169, 97, 0.4);
+}
+.map-icon { font-size: 14px; }
+
+/* ACCORDION */
+.accordion-section {
+  background: linear-gradient(180deg, var(--bej) 0%, var(--bej-dark) 100%);
+}
+.accordion {
+  max-width: 720px; margin: 40px auto 0;
+  display: flex; flex-direction: column; gap: 15px;
+}
+.accordion-item {
+  background: linear-gradient(135deg, #ffffff 0%, #fdfaf3 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(60, 40, 20, 0.08);
+  border: 1px solid rgba(201, 169, 97, 0.2);
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+.accordion-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(180deg, var(--gold), var(--gold-light));
+  border-radius: 4px 0 0 4px;
+}
+.accordion-item:hover {
+  box-shadow: 0 15px 40px rgba(60, 40, 20, 0.15);
+  transform: translateY(-2px);
+}
+.accordion-item.active {
+  box-shadow: 0 20px 50px rgba(201, 169, 97, 0.25);
+  border-color: var(--gold);
+}
+.accordion-header {
+  width: 100%; display: flex; align-items: center;
+  gap: 15px; padding: 24px 28px;
+  background: transparent; cursor: pointer;
+  text-align: left; transition: background 0.3s;
+  font-family: var(--font-serif);
+}
+.accordion-header:hover { background: rgba(201, 169, 97, 0.05); }
+.acc-icon { font-size: 26px; flex-shrink: 0; }
+.acc-title {
+  flex: 1; font-size: 21px; color: var(--green);
+  font-weight: 500; letter-spacing: 0.5px;
+}
+.acc-arrow {
+  font-size: 14px; color: var(--gold);
+  transition: transform 0.4s;
+}
+.accordion-item.active .acc-arrow { transform: rotate(180deg); }
+.accordion-content {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.4s;
+  padding: 0 28px;
+}
+.accordion-item.active .accordion-content {
+  max-height: 800px; padding: 5px 28px 28px;
+}
+.acc-text {
+  font-size: 17px; line-height: 1.85;
+  color: var(--text-light);
+}
+
+.timeline {
+  display: flex; flex-direction: column;
+  gap: 14px; padding-top: 10px;
+}
+.timeline-item {
+  display: flex; align-items: center; gap: 18px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(201, 169, 97, 0.08), rgba(201, 169, 97, 0.15));
+  border-radius: 12px;
+  border-left: 3px solid var(--gold);
+  transition: transform 0.3s;
+}
+.timeline-item:hover { transform: translateX(5px); }
+.timeline-time {
+  font-family: var(--font-sans); font-size: 15px;
+  font-weight: 600; color: var(--gold-dark);
+  min-width: 60px;
+}
+.timeline-text { font-size: 17px; color: var(--text); }
+
+.color-palette {
+  display: flex; gap: 15px;
+  margin-top: 25px; justify-content: center;
+}
+.color-palette span {
+  width: 55px; height: 55px; border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: 3px solid white;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.color-palette span:hover { transform: scale(1.15); }
+
+/* GALEREYA */
+.gallery-section {
+  background:
+    linear-gradient(rgba(45, 62, 47, 0.9), rgba(45, 62, 47, 0.96)),
+    url('assets/images/gallery-bg.jpg') center/cover fixed,
+    linear-gradient(135deg, #2d3e2f, #1a1410);
+  color: white;
+  padding-bottom: 130px;
+}
+.gallery-section .section-title { color: var(--gold); }
+.gallery-swiper {
+  width: 100%; max-width: 1200px;
+  margin: 50px auto 0; padding-bottom: 60px;
+}
+.gallery-swiper .swiper-slide {
+  width: 400px; height: 520px;
+  border-radius: 22px; overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.6);
+  transition: transform 0.5s, box-shadow 0.5s;
+  border: 4px solid rgba(201, 169, 97, 0.5);
+  position: relative;
+}
+.gallery-swiper .swiper-slide::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(201, 169, 97, 0.4);
+  border-radius: 16px;
+  pointer-events: none;
+}
+.gallery-swiper .swiper-slide-active {
+  transform: scale(1.08);
+  box-shadow: 0 40px 90px rgba(201, 169, 97, 0.5);
+  border-color: var(--gold);
+}
+.gallery-swiper .swiper-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover; transition: transform 0.8s;
+}
+.gallery-swiper .swiper-slide:hover img { transform: scale(1.08); }
+.gallery-swiper .swiper-pagination-bullet {
+  background: var(--gold); opacity: 0.5;
+}
+.gallery-swiper .swiper-pagination-bullet-active {
+  opacity: 1; width: 28px; border-radius: 4px;
+}
+
+/* RSVP */
+.rsvp-section {
+  background: var(--bej-dark);
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(201, 169, 97, 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 75%, rgba(201, 169, 97, 0.06) 0%, transparent 25%);
+}
+.rsvp-form {
+  max-width: 520px; margin: 30px auto 0;
+  text-align: left;
+  background:
+    linear-gradient(135deg, #ffffff 0%, #fdfaf3 100%),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9a961' stroke-opacity='0.08' stroke-width='1'%3E%3Cpath d='M40 5 L45 35 L75 40 L45 45 L40 75 L35 45 L5 40 L35 35 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover, 80px 80px;
+  padding: 40px 35px; border-radius: 22px;
+  box-shadow: 0 25px 70px rgba(60, 40, 20, 0.15);
+  position: relative;
+}
+.rsvp-form::before {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  border: 1px dashed rgba(201, 169, 97, 0.3);
+  border-radius: 14px;
+  pointer-events: none;
+}
+.form-group { margin-bottom: 22px; position: relative; z-index: 2; }
+.form-group label {
+  display: block; font-family: var(--font-sans);
+  font-size: 11px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--text-light);
+  margin-bottom: 10px; font-weight: 500;
+}
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%; padding: 14px 18px;
+  border: 1.5px solid var(--bej-dark);
+  border-radius: 12px;
+  font-family: var(--font-serif); font-size: 17px;
+  color: var(--text); background: var(--bej);
+  outline: none; transition: 0.3s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold); background: white;
+  box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.15);
+}
+.radio-group { display: flex; gap: 15px; }
+.radio-label {
+  flex: 1; display: flex; align-items: center;
+  gap: 10px; padding: 14px 18px;
+  border: 1.5px solid var(--bej-dark);
+  border-radius: 12px; cursor: pointer;
+  transition: 0.3s; font-size: 16px;
+  background: var(--bej);
+}
+.radio-label:has(input:checked) {
+  border-color: var(--gold);
+  background: rgba(201, 169, 97, 0.12);
+  box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.1);
+}
+.radio-label input { accent-color: var(--gold); }
+
+.rsvp-submit {
+  width: 100%; padding: 18px;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  color: white; border-radius: 14px;
+  font-family: var(--font-sans); font-size: 13px;
+  letter-spacing: 4px; font-weight: 600;
+  transition: 0.3s; text-transform: uppercase;
+  box-shadow: 0 15px 35px rgba(45, 62, 47, 0.3);
+  position: relative; z-index: 2;
+}
+.rsvp-submit:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(201, 169, 97, 0.5);
+}
+
+.rsvp-success {
+  display: none; max-width: 520px; margin: 30px auto 0;
+  text-align: center; padding: 50px 35px;
+  background: white; border-radius: 22px;
+  box-shadow: 0 25px 70px rgba(60, 40, 20, 0.15);
+}
+.rsvp-success.show { display: block; animation: fadeUp 0.7s; }
+.success-icon {
+  width: 70px; height: 70px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--green-light));
+  color: white; font-size: 34px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 25px;
+  box-shadow: 0 15px 35px rgba(45, 62, 47, 0.4);
+  animation: successPulse 1s;
+}
+@keyframes successPulse {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FOOTER */
+.footer {
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(201, 169, 97, 0.15), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(74, 93, 76, 0.2), transparent 50%),
+    linear-gradient(180deg, #1a1410 0%, #0f0a08 100%);
+  color: white;
+  padding: 80px 25px 50px; text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.footer-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 2; }
+.footer-names {
+  font-family: var(--font-script); font-size: 68px;
+  color: var(--gold); margin-bottom: 15px;
+  line-height: 1;
+}
+.footer-names span { color: var(--gold-light); font-size: 0.7em; }
+.footer-date {
+  font-family: var(--font-sans); font-size: 13px;
+  letter-spacing: 7px; opacity: 0.6;
+}
+.footer-ornament {
+  color: var(--gold); font-size: 16px;
+  letter-spacing: 10px; margin: 30px 0;
+}
+.footer-text {
+  font-size: 17px; opacity: 0.8;
+  max-width: 420px; margin: 0 auto 35px;
+  line-height: 1.8;
+}
+.footer-author {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.footer-author-name {
+  font-family: var(--font-script);
+  font-size: 32px;
+  color: var(--gold-light);
+  margin-bottom: 30px;
+  line-height: 1;
+}
+.footer-credit {
+  font-family: var(--font-sans); font-size: 11px;
+  letter-spacing: 3px; opacity: 0.4;
+  text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .gallery-swiper .swiper-slide { width: 300px; height: 400px; }
+  .bird-circle { width: 100px; height: 100px; }
+  .bird-icon { font-size: 42px; }
+  .bird-row { gap: 25px; }
+}
+
+@media (max-width: 480px) {
+  .envelope { width: 300px; height: 210px; }
+  .envelope-flap { height: 125px; }
+  .envelope-seal { width: 75px; height: 75px; }
+  .seal-letter { font-size: 18px; }
+  .card-names { font-size: 28px; }
+  .countdown-item { min-width: 72px; padding: 18px 10px; }
+  .countdown-num { font-size: 32px; }
+  .countdown-sep { display: none; }
+  .gallery-swiper .swiper-slide { width: 260px; height: 360px; }
+  .section { padding: 75px 20px; }
+  .music-control, .lang-switcher { padding: 6px 10px; }
+  .volume-slider { width: 50px; }
+  .footer-names { font-size: 52px; }
+  .hero-flower { display: none; }
+  .bird-circle { width: 85px; height: 85px; }
+  .bird-icon { font-size: 36px; }
+  .bird-row { gap: 18px; }
+  .bird-label { font-size: 9px; letter-spacing: 2px; }
+  .bird-reveal-card { padding: 25px 25px; min-width: 200px; min-height: 170px; }
+  .bird-reveal-value { font-size: 36px; }
+}
+
+::selection { background: var(--gold); color: white; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bej-dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 5px; }
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <div class="preloader-inner">
+    <div class="preloader-ring"></div>
+    <div class="preloader-text">D & H</div>
+  </div>
+</div>
+
+<!-- MUSIQA -->
+<div class="music-control" id="musicControl">
+  <button class="music-btn" id="musicToggle" aria-label="Musiqa">
+    <span class="music-icon">♪</span>
+  </button>
+  <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.4" aria-label="Ovoz">
+</div>
+
+<!-- TIL -->
+<div class="lang-switcher">
+  <button class="lang-btn active" data-lang="uz">UZ</button>
+  <button class="lang-btn" data-lang="en">EN</button>
+  <button class="lang-btn" data-lang="ru">RU</button>
+</div>
+
+<!-- INTRO — ESHIK OCHILISH EFFEKTI -->
+<div class="intro" id="intro">
+  
+  <!-- Eshik orqasidagi yorug'lik + fon -->
+  <div class="intro-light"></div>
+  
+  <!-- Chap eshik -->
+  <div class="intro-door intro-door-left">
+    <div class="door-panel">
+      <div class="door-panel-inner"></div>
+      <div class="door-ornament top">✦</div>
+      <div class="door-ornament middle">❦</div>
+      <div class="door-ornament bottom">✦</div>
+    </div>
+    <div class="door-handle"></div>
+  </div>
+  
+  <!-- O'ng eshik -->
+  <div class="intro-door intro-door-right">
+    <div class="door-panel">
+      <div class="door-panel-inner"></div>
+      <div class="door-ornament top">✦</div>
+      <div class="door-ornament middle">❦</div>
+      <div class="door-ornament bottom">✦</div>
+    </div>
+    <div class="door-handle"></div>
+  </div>
+
+  <!-- Eshik bosish yozuvi -->
+  <div class="door-hint" id="doorHint">
+    <span data-uz="ESHIKNI OCHING" data-en="OPEN THE DOOR" data-ru="ОТКРОЙТЕ ДВЕРЬ">ESHIKNI OCHING</span>
+  </div>
+  
+  <!-- Konvert -->
+  <div class="envelope-container" id="envelopeContainer">
+    <div class="envelope" id="envelope">
+      <div class="envelope-body">
+        <div class="envelope-lace"></div>
+        <div class="envelope-pattern"></div>
+        <div class="envelope-corner tl"></div>
+        <div class="envelope-corner tr"></div>
+        <div class="envelope-corner bl"></div>
+        <div class="envelope-corner br"></div>
+      </div>
+      <div class="envelope-flap" id="envelopeFlap">
+        <div class="flap-inner"></div>
+      </div>
+      <div class="envelope-card" id="envelopeCard">
+        <div class="card-content">
+          <div class="card-ornament top">✦ ❦ ✦</div>
+          <p class="card-subtitle" data-uz="TO'Y TAKLIFNOMASI" data-en="WEDDING INVITATION" data-ru="СВАДЕБНОЕ ПРИГЛАШЕНИЕ">TO'Y TAKLIFNOMASI</p>
+          <h2 class="card-names">Doston <span>&</span> Hilola</h2>
+          <div class="card-line"></div>
+          <p class="card-date" data-uz="03 OKTABR 2026" data-en="03 OCTOBER 2026" data-ru="03 ОКТЯБРЯ 2026">03 OKTABR 2026</p>
+          <div class="card-ornament bottom">✦ ❦ ✦</div>
+        </div>
+      </div>
+      <div class="envelope-seal" id="envelopeSeal">
+        <div class="seal-outer">
+          <div class="seal-inner">
+            <span class="seal-letter">D<span class="seal-amp">&</span>H</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="open-hint" id="openHint">
+      <span data-uz="OCHISH UCHUN BOSING" data-en="TAP TO OPEN" data-ru="НАЖМИТЕ ЧТОБЫ ОТКРЫТЬ">OCHISH UCHUN BOSING</span>
+      <div class="hint-pulse"></div>
+    </div>
+  </div>
+  
+</div>
+
+<!-- ASOSIY SAYT -->
+<main class="site" id="site">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-flower hero-flower-tl">✿</div>
+    <div class="hero-flower hero-flower-tr">✿</div>
+
+    <div class="hero-content">
+      <p class="hero-subtitle" data-uz="BIZNING TO'YIMIZ" data-en="OUR WEDDING" data-ru="НАША СВАДЬБА">BIZNING TO'YIMIZ</p>
+      
+      <h1 class="hero-names">
+        <span class="name-line" id="nameLine1">Doston</span>
+        <span class="hero-amp">&</span>
+        <span class="name-line" id="nameLine2">Hilola</span>
+      </h1>
+
+      <div class="hero-divider">
+        <span class="divider-line left"></span>
+        <span class="divider-icon">❦</span>
+        <span class="divider-line right"></span>
+      </div>
+
+      <p class="hero-date" data-uz="SHANBA · 03 OKTABR 2026" data-en="SATURDAY · 03 OCTOBER 2026" data-ru="СУББОТА · 03 ОКТЯБРЯ 2026">SHANBA · 03 OKTABR 2026</p>
+      <p class="hero-location" data-uz="QASHQADARYO · QAMASHI" data-en="QASHQADARYO · QAMASHI" data-ru="КАШКАДАРЬЯ · КАМАШИ">QASHQADARYO · QAMASHI</p>
+    </div>
+
+    <div class="scroll-hint" id="scrollHint">
+      <span data-uz="PASTGA SURING" data-en="SCROLL DOWN" data-ru="ПРОКРУТИТЕ ВНИЗ">PASTGA SURING</span>
+      <div class="scroll-arrow">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKLIF MATNI -->
+  <section class="section invitation-section" id="invitation">
+    <div class="section-decor decor-left">❦</div>
+    <div class="section-decor decor-right">❦</div>
+    
+    <div class="section-inner" data-aos="fade-up" data-aos-duration="1200">
+      <div class="ornament-top">✦ ❦ ✦</div>
+      <h2 class="section-title" data-uz="Aziz mehmon" data-en="Dear Guest" data-ru="Дорогой гость">Aziz mehmon</h2>
+      <p class="section-text" 
+         data-uz="Sizni hayotimizdagi eng quvonchli kun — to'yimiz sharafiga tashrif buyurishingizni so'raymiz. Bu kunni biz bilan baham ko'rishdan bag'oyat xursand bo'lamiz."
+         data-en="We invite you to share in the joy of our wedding day. It would be our greatest pleasure to have you with us on this special occasion."
+         data-ru="Приглашаем вас разделить с нами радость нашего свадебного дня. Будем счастливы видеть вас на нашем торжестве.">
+        Sizni hayotimizdagi eng quvonchli kun — to'yimiz sharafiga tashrif buyurishingizni so'raymiz. Bu kunni biz bilan baham ko'rishdan bag'oyat xursand bo'lamiz.
+      </p>
+      <div class="ornament-bottom">✦ ❦ ✦</div>
+    </div>
+  </section>
+
+  <!-- QUSHCHALAR -->
+  <section class="section bird-section" id="birdReveal">
+    <div class="section-inner" data-aos="fade-up">
+      <h2 class="section-title" 
+          data-uz="To'y sanasi" data-en="Wedding Date" data-ru="Дата свадьбы">To'y sanasi</h2>
+      <p class="bird-subtitle" 
+         data-uz="Qushchalarni bosing — sirlar ochiladi" 
+         data-en="Tap the birds — secrets unfold" 
+         data-ru="Нажмите на птиц — тайны откроются">
+        Qushchalarni bosing — sirlar ochiladi
+      </p>
+
+      <div class="bird-row" id="birdRow">
+        <div class="bird-item" data-bird="day" onclick="revealBird(this, 'day')">
+          <div class="bird-circle">
+            <span class="bird-icon">🐦</span>
+          </div>
+          <span class="bird-label" data-uz="KUN" data-en="DAY" data-ru="ДЕНЬ">KUN</span>
+        </div>
+
+        <div class="bird-item" data-bird="month" onclick="revealBird(this, 'month')">
+          <div class="bird-circle">
+            <span class="bird-icon">🕊️</span>
+          </div>
+          <span class="bird-label" data-uz="OY" data-en="MONTH" data-ru="МЕСЯЦ">OY</span>
+        </div>
+
+        <div class="bird-item" data-bird="year" onclick="revealBird(this, 'year')">
+          <div class="bird-circle">
+            <span class="bird-icon">🦜</span>
+          </div>
+          <span class="bird-label" data-uz="YIL" data-en="YEAR" data-ru="ГОД">YIL</span>
+        </div>
+      </div>
+
+      <button class="bird-reset" id="birdReset" onclick="resetBirds()">
+        <span data-uz="QAYTA BOSISH" data-en="TRY AGAIN" data-ru="ПОПРОБОВАТЬ СНОВА">QAYTA BOSISH</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="section countdown-section" id="countdown">
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+    <div class="section-inner">
+      <h2 class="section-title" data-aos="fade-up"
+          data-uz="To'yga qoldi" data-en="Countdown" data-ru="До свадьбы">To'yga qoldi</h2>
+      <div class="countdown-grid" data-aos="fade-up" data-aos-delay="200">
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdDays">00</div>
+          <div class="countdown-label" data-uz="KUN" data-en="DAYS" data-ru="ДНЕЙ">KUN</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdHours">00</div>
+          <div class="countdown-label" data-uz="SOAT" data-en="HOURS" data-ru="ЧАСОВ">SOAT</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdMins">00</div>
+          <div class="countdown-label" data-uz="DAQIQA" data-en="MINUTES" data-ru="МИНУТ">DAQIQA</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-item">
+          <div class="countdown-num" id="cdSecs">00</div>
+          <div class="countdown-label" data-uz="SONIYA" data-en="SECONDS" data-ru="СЕКУНД">SONIYA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="section venue-section" id="venue">
+    <div class="section-inner">
+      <h2 class="section-title" data-aos="fade-up"
+          data-uz="Qachon va qayerda" data-en="When & Where" data-ru="Когда и где">Qachon va qayerda</h2>
+      
+      <div class="venue-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="venue-ornament">✦</div>
+        <div class="venue-icon">🏛</div>
+        <h3 class="venue-name">JASMIN TO'YXONASI</h3>
+        <p class="venue-addr" 
+           data-uz="Qashqadaryo viloyati, Qamashi tumani" 
+           data-en="Qashqadaryo region, Qamashi district" 
+           data-ru="Кашкадарьинская область, Камашинский район">Qashqadaryo viloyati, Qamashi tumani</p>
+        <div class="venue-time-wrap">
+          <span class="venue-time-label" data-uz="BOSHLANISH" data-en="START" data-ru="НАЧАЛО">BOSHLANISH</span>
+          <div class="venue-time">18:00</div>
+        </div>
+        <div class="venue-map-btns">
+          <a href="https://yandex.uz/maps" target="_blank" class="map-btn">
+            <span class="map-icon">📍</span>
+            <span>Yandex</span>
+          </a>
+          <a href="https://maps.google.com" target="_blank" class="map-btn">
+            <span class="map-icon">📍</span>
+            <span>Google</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCORDION -->
+  <section class="section accordion-section" id="details">
+    <div class="section-inner">
+      <h2 class="section-title" data-aos="fade-up"
+          data-uz="Batafsil ma'lumot" data-en="More Details" data-ru="Подробнее">Batafsil ma'lumot</h2>
+
+      <div class="accordion" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span class="acc-icon">📋</span>
+            <span class="acc-title" data-uz="To'y tartibi" data-en="Wedding Program" data-ru="Программа">To'y tartibi</span>
+            <span class="acc-arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="timeline-time">17:00</span>
+                <span class="timeline-text" data-uz="Mehmonlarni kutib olish" data-en="Welcoming guests" data-ru="Встреча гостей">Mehmonlarni kutib olish</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">18:00</span>
+                <span class="timeline-text" data-uz="Nikoh marosimi" data-en="Wedding ceremony" data-ru="Церемония">Nikoh marosimi</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">19:00</span>
+                <span class="timeline-text" data-uz="Ziyofat boshlanishi" data-en="Banquet starts" data-ru="Банкет">Ziyofat boshlanishi</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">21:00</span>
+                <span class="timeline-text" data-uz="Tort va raqslar" data-en="Cake and dancing" data-ru="Торт и танцы">Tort va raqslar</span>
+              </div>
+              <div class="timeline-item">
+                <span class="timeline-time">23:00</span>
+                <span class="timeline-text" data-uz="Xayrlashuv" data-en="Farewell" data-ru="Прощание">Xayrlashuv</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span class="acc-icon">👔</span>
+            <span class="acc-title" data-uz="Kiyim kodi" data-en="Dress Code" data-ru="Дресс-код">Kiyim kodi</span>
+            <span class="acc-arrow">▼</span>
+          </button>
+          <div class="accordion-content">
+            <p class="acc-text"
+               data-uz="Iltimos, klassik va nafis kiyimda tashrif buyuring. Rang palitrasi: bej, oltin, to'q yashil."
+               data-en="Please come in classic and elegant attire. Color palette: beige, gold, dark green."
+               data-ru="Пожалуйста, приходите в классической и элегантной одежде. Палитра: беж, золото, тёмно-зелёный.">
+              Iltimos, klassik va nafis kiyimda tashrif buyuring. Rang palitrasi: bej, oltin, to'q yashil.
+            </p>
+            <div class="color-palette">
+              <span style="background: #f5efe6" title="Bej"></span>
+              <span style="background: #c9a961" title="Oltin"></span>
+              <span style="background: #2d3e2f" title="Yashil"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALEREYA -->
+  <section class="section gallery-section" id="gallery">
+    <div class="section-inner">
+      <h2 class="section-title" data-aos="fade-up"
+          data-uz="Bizning lahzalar" data-en="Our Moments" data-ru="Наши моменты">Bizning lahzalar</h2>
+    </div>
+    <div class="swiper gallery-swiper" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/images/photo-1.jpg" alt="Xotira 1" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/images/photo-2.jpg" alt="Xotira 2" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/images/photo-3.jpg" alt="Xotira 3" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/images/photo-4.jpg" alt="Xotira 4" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/images/photo-5.jpg" alt="Xotira 5" loading="lazy"></div>
+        <div class="swiper-slide"><img src="assets/images/photo-6.jpg" alt="Xotira 6" loading="lazy"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="section rsvp-section" id="rsvp">
+    <div class="section-inner" data-aos="fade-up">
+      <h2 class="section-title" 
+          data-uz="Tashrifni tasdiqlang" data-en="RSVP" data-ru="Подтвердите">Tashrifni tasdiqlang</h2>
+      <p class="section-text"
+         data-uz="Iltimos, 25-sentabrgacha tashrifingizni tasdiqlang."
+         data-en="Please confirm your attendance by September 25."
+         data-ru="Пожалуйста, подтвердите участие до 25 сентября.">
+        Iltimos, 25-sentabrgacha tashrifingizni tasdiqlang.
+      </p>
+
+      <form class="rsvp-form" id="rsvpForm">
+        <div class="form-group">
+          <label for="guestName" data-uz="Ismingiz" data-en="Your name" data-ru="Ваше имя">Ismingiz</label>
+          <input type="text" id="guestName" required placeholder="Ism familiya">
+        </div>
+        <div class="form-group">
+          <label for="guestCount" data-uz="Mehmonlar soni" data-en="Number of guests" data-ru="Гостей">Mehmonlar soni</label>
+          <select id="guestCount">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5+">5+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-uz="Tashrif" data-en="Attendance" data-ru="Присутствие">Tashrif</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="attendance" value="yes" checked>
+              <span data-uz="Kelaman" data-en="I will come" data-ru="Приду">Kelaman</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="attendance" value="no">
+              <span data-uz="Kelmayman" data-en="Cannot come" data-ru="Не смогу">Kelmayman</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="guestMsg" data-uz="Izoh" data-en="Message" data-ru="Сообщение">Izoh (ixtiyoriy)</label>
+          <textarea id="guestMsg" rows="3" placeholder="..."></textarea>
+        </div>
+        <button type="submit" class="rsvp-submit" 
+                data-uz="YUBORISH" data-en="SUBMIT" data-ru="ОТПРАВИТЬ">YUBORISH</button>
+      </form>
+
+      <div class="rsvp-success" id="rsvpSuccess">
+        <div class="success-icon">✓</div>
+        <p data-uz="Rahmat! Javobingiz qabul qilindi." 
+           data-en="Thank you! Your response has been received." 
+           data-ru="Спасибо! Ваш ответ получен.">Rahmat! Javobingiz qabul qilindi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-names">Doston <span>&</span> Hilola</div>
+      <div class="footer-date">03 · 10 · 2026</div>
+      <div class="footer-ornament">✦ ❦ ✦</div>
+      <p class="footer-text"
+         data-uz="Sizni ko'rishdan bag'oyat xursandmiz!"
+         data-en="We look forward to seeing you!"
+         data-ru="Будем рады вас видеть!">
+        Sizni ko'rishdan bag'oyat xursandmiz!
+      </p>
+      
+      <div class="footer-author" data-uz="MUALLIF" data-en="AUTHOR" data-ru="АВТОР">MUALLIF</div>
+      <div class="footer-author-name">Uralov Sardor</div>
+      
+      <div class="footer-credit">Made with ♥</div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- KUTUBXONALAR -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+const CONFIG = {
+  weddingDate: new Date('2026-10-03T18:00:00').getTime(),
+  telegramBotToken: '',
+  telegramChatId: '',
+};
+
+const intro = document.getElementById('intro');
+const envelope = document.getElementById('envelope');
+const site = document.getElementById('site');
+const musicControl = document.getElementById('musicControl');
+const langSwitcher = document.querySelector('.lang-switcher');
+const preloader = document.getElementById('preloader');
+
+const bgMusic = new Audio('assets/audio/background.mp3');
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    preloader.classList.add('hidden');
+    initIntro();
+  }, 800);
+});
+
+function initIntro() {
+  // Eshikni ochish — intro ga bosish
+  intro.addEventListener('click', openDoor);
+  
+  // Konvertni ochish — alohida
+  envelope.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openCard();
+  });
+  document.getElementById('openHint').addEventListener('click', (e) => {
+    e.stopPropagation();
+    openCard();
+  });
+
+  function openDoor() {
+    if (intro.classList.contains('opening')) return;
+    
+    // Eshiklarni ochish
+    intro.classList.add('opening');
+    startMusic();
+  }
+  
+  function openCard() {
+    if (!intro.classList.contains('opening')) return;
+    if (envelope.classList.contains('opening')) return;
+    
+    envelope.classList.add('opening');
+    
+    setTimeout(() => {
+      intro.classList.add('hidden');
+      site.classList.add('visible');
+      musicControl.classList.add('visible');
+      langSwitcher.classList.add('visible');
+
+      setTimeout(() => {
+        if (typeof AOS !== 'undefined') AOS.refresh();
+        initSwiper();
+        initParticles();
+      }, 200);
+    }, 1800);
+  }
+}
+
+function startMusic() {
+  bgMusic.play().then(() => {
+    document.getElementById('musicToggle').classList.add('playing');
+  }).catch(err => console.log('Audio blocked:', err));
+}
+
+function initMusicControls() {
+  const toggle = document.getElementById('musicToggle');
+  const slider = document.getElementById('volumeSlider');
+
+  toggle.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      toggle.classList.add('playing');
+    } else {
+      bgMusic.pause();
+      toggle.classList.remove('playing');
+    }
+  });
+
+  slider.addEventListener('input', (e) => {
+    bgMusic.volume = parseFloat(e.target.value);
+  });
+}
+
+function initLanguage() {
+  const buttons = document.querySelectorAll('.lang-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      document.documentElement.lang = lang;
+      currentBirdLang = lang;
+      
+      const revealedEl = document.querySelector('.bird-reveal-card.show');
+      if (revealedEl) {
+        const birdType = revealedEl.dataset.bird;
+        updateRevealCard(revealedEl, birdType, lang);
+      }
+    });
+  });
+}
+
+function initCountdown() {
+  const daysEl = document.getElementById('cdDays');
+  const hoursEl = document.getElementById('cdHours');
+  const minsEl = document.getElementById('cdMins');
+  const secsEl = document.getElementById('cdSecs');
+
+  function update() {
+    const diff = CONFIG.weddingDate - Date.now();
+    if (diff <= 0) {
+      [daysEl, hoursEl, minsEl, secsEl].forEach(el => el.textContent = '00');
+      return;
+    }
+    setVal(daysEl, Math.floor(diff / 86400000));
+    setVal(hoursEl, Math.floor((diff % 86400000) / 3600000));
+    setVal(minsEl, Math.floor((diff % 3600000) / 60000));
+    setVal(secsEl, Math.floor((diff % 60000) / 1000));
+  }
+
+  function setVal(el, val) {
+    const str = String(val).padStart(2, '0');
+    if (el.textContent !== str) {
+      el.textContent = str;
+      el.classList.remove('tick');
+      void el.offsetWidth;
+      el.classList.add('tick');
+    }
+  }
+
+  update();
+  setInterval(update, 1000);
+}
+
+function initSwiper() {
+  if (typeof Swiper === 'undefined') return;
+  new Swiper('.gallery-swiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    coverflowEffect: {
+      rotate: 35, stretch: 0, depth: 180,
+      modifier: 1, slideShadows: false,
+    },
+    pagination: { el: '.swiper-pagination', clickable: true },
+  });
+}
+
+function initParticles() {
+  const canvas = document.getElementById('particlesCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let particles = [], w, h;
+
+  function resize() {
+    w = canvas.width = canvas.offsetWidth;
+    h = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+      this.size = Math.random() * 3 + 1;
+      this.speedY = -(Math.random() * 0.8 + 0.3);
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.opacity = Math.random() * 0.7 + 0.3;
+      this.fade = Math.random() * 0.008 + 0.003;
+      this.wobble = Math.random() * Math.PI * 2;
+      this.wobbleSpeed = Math.random() * 0.02 + 0.01;
+    }
+    update() {
+      this.y += this.speedY;
+      this.wobble += this.wobbleSpeed;
+      this.x += Math.sin(this.wobble) * 0.5 + this.speedX;
+      this.opacity -= this.fade;
+      if (this.y < 0 || this.opacity <= 0) this.reset();
+    }
+    draw() {
+      const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
+      g.addColorStop(0, `rgba(255, 215, 130, ${this.opacity})`);
+      g.addColorStop(1, 'rgba(201, 169, 97, 0)');
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+      ctx.fillStyle = g;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+  function animate() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+function initGSAP() {
+  if (typeof gsap === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.section-title').forEach(title => {
+    gsap.from(title, {
+      opacity: 0, y: 50, duration: 1.2,
+      scrollTrigger: { trigger: title, start: 'top 85%' }
+    });
+  });
+
+  gsap.from('.venue-card', {
+    opacity: 0, y: 80, scale: 0.95, duration: 1.2,
+    scrollTrigger: { trigger: '.venue-card', start: 'top 80%' }
+  });
+}
+
+function initRSVP() {
+  const form = document.getElementById('rsvpForm');
+  const success = document.getElementById('rsvpSuccess');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = {
+      name: document.getElementById('guestName').value,
+      count: document.getElementById('guestCount').value,
+      attendance: document.querySelector('input[name="attendance"]:checked').value,
+      message: document.getElementById('guestMsg').value,
+    };
+
+    if (CONFIG.telegramBotToken && CONFIG.telegramChatId) {
+      const text = `📩 *Yangi RSVP*\n\n👤 ${data.name}\n👥 ${data.count}\n✅ ${data.attendance === 'yes' ? 'Kelaman' : 'Kelmayman'}\n💬 ${data.message || '—'}`;
+      try {
+        await fetch(`https://api.telegram.org/bot${CONFIG.telegramBotToken}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: CONFIG.telegramChatId,
+            text, parse_mode: 'Markdown',
+          })
+        });
+      } catch (err) { console.error(err); }
+    }
+
+    form.style.display = 'none';
+    success.classList.add('show');
+  });
+}
+
+function toggleAccordion(header) {
+  const item = header.parentElement;
+  const isActive = item.classList.contains('active');
+  document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+  if (!isActive) item.classList.add('active');
+}
+
+const BIRD_DATA = {
+  day: {
+    label: { uz: 'KUN', en: 'DAY', ru: 'ДЕНЬ' },
+    value: '03',
+    sub: { uz: 'SHANBA', en: 'SATURDAY', ru: 'СУББОТА' }
+  },
+  month: {
+    label: { uz: 'OY', en: 'MONTH', ru: 'МЕСЯЦ' },
+    value: { uz: 'OKTABR', en: 'OCTOBER', ru: 'ОКТЯБРЬ' },
+    sub: { uz: '2026', en: '2026', ru: '2026' }
+  },
+  year: {
+    label: { uz: 'YIL', en: 'YEAR', ru: 'ГОД' },
+    value: '2026',
+    sub: { uz: '03 OKTABR', en: '03 OCTOBER', ru: '03 ОКТЯБРЯ' }
+  }
+};
+
+let currentBirdLang = 'uz';
+let revealedBirds = { day: false, month: false, year: false };
+
+function revealBird(element, birdType) {
+  if (revealedBirds[birdType]) return;
+  
+  const lang = getCurrentLang();
+  const data = BIRD_DATA[birdType];
+  if (!data) return;
+
+  revealedBirds[birdType] = true;
+  element.classList.add('revealed');
+
+  const card = document.createElement('div');
+  card.className = 'bird-reveal-card';
+  card.dataset.bird = birdType;
+  
+  card.innerHTML = `
+    <div class="bird-reveal-label">${data.label[lang] || data.label.uz}</div>
+    <div class="bird-reveal-value">${data.value[lang] || data.value.uz || data.value}</div>
+    <div class="bird-reveal-sub">${data.sub[lang] || data.sub.uz}</div>
+  `;
+
+  element.parentNode.insertBefore(card, element.nextSibling);
+  setTimeout(() => card.classList.add('show'), 50);
+  createFeathers(element);
+
+  setTimeout(() => {
+    document.getElementById('birdReset').classList.add('show');
+  }, 500);
+}
+
+function updateRevealCard(card, birdType, lang) {
+  const data = BIRD_DATA[birdType];
+  if (!data) return;
+  
+  const label = card.querySelector('.bird-reveal-label');
+  const value = card.querySelector('.bird-reveal-value');
+  const sub = card.querySelector('.bird-reveal-sub');
+  
+  if (label) label.textContent = data.label[lang] || data.label.uz;
+  if (value) value.textContent = data.value[lang] || data.value.uz || data.value;
+  if (sub) sub.textContent = data.sub[lang] || data.sub.uz;
+}
+
+function resetBirds() {
+  document.querySelectorAll('.bird-reveal-card').forEach(card => card.remove());
+  document.querySelectorAll('.bird-item').forEach(item => item.classList.remove('revealed'));
+  document.getElementById('birdReset').classList.remove('show');
+  revealedBirds = { day: false, month: false, year: false };
+}
+
+function getCurrentLang() {
+  const activeBtn = document.querySelector('.lang-btn.active');
+  return activeBtn ? activeBtn.dataset.lang : 'uz';
+}
+
+function createFeathers(element) {
+  const rect = element.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  const feathers = ['✦', '❦', '✿', '★', '✧'];
+  
+  for (let i = 0; i < 8; i++) {
+    const feather = document.createElement('div');
+    feather.className = 'feather';
+    feather.textContent = feathers[Math.floor(Math.random() * feathers.length)];
+    feather.style.left = centerX + 'px';
+    feather.style.top = centerY + 'px';
+    
+    const angle = (Math.PI * 2 * i) / 8 + Math.random() * 0.5;
+    const distance = 80 + Math.random() * 80;
+    const fx = Math.cos(angle) * distance;
+    const fy = Math.sin(angle) * distance;
+    
+    feather.style.setProperty('--fx', fx + 'px');
+    feather.style.setProperty('--fy', fy + 'px');
+    
+    document.body.appendChild(feather);
+    
+    setTimeout(() => feather.classList.add('fly'), 10);
+    setTimeout(() => feather.remove(), 1600);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 1000, once: false, offset: 100 });
+  }
+  initMusicControls();
+  initLanguage();
+  initCountdown();
+  initGSAP();
+  initRSVP();
+});
+</script>
+
+</body>
+</html>
